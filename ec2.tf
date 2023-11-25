@@ -9,7 +9,7 @@ resource "aws_instance" "web" {
   connection {
     type = "ssh"
     user = "ubuntu"
-    private_key = file("amazonlinux.pem")
+    private_key = file("./id_rsa")
     host = aws_instance.web.public_ip
   }
   provisioner "remote-exec" {
